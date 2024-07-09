@@ -16,9 +16,7 @@ public class Holiday {
 
     private String country;
     private String name;
-    private String date; // Assuming date is stored as string for simplicity
-
-    // Constructors, getters, and setters
+    private String date;
 
     public Holiday() {
         // Default constructor
@@ -29,8 +27,6 @@ public class Holiday {
         this.name = name;
         this.date = date;
     }
-
-    // Getters and setters
 
     public Long getId() {
         return id;

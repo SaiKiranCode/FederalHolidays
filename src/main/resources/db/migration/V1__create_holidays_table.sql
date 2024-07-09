@@ -2,7 +2,7 @@ CREATE TABLE public.holidays (
     id SERIAL PRIMARY KEY,
     country VARCHAR(255) NOT NULL,
     name VARCHAR(255) NOT NULL,
-    date DATE NOT NULL
+    date VARCHAR(255) NOT NULL
 );
 
 INSERT INTO public.holidays (country, name, date) VALUES

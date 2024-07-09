@@ -6,7 +6,6 @@ import com.example.holidays.service.HolidayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,22 +18,27 @@ public class HolidaysController {
     @Autowired
     private HolidayService holidayService;
 
+    @Autowired
+    private HolidayRepository holidayRepository;
+
     @PostMapping("/addHoliday")
     public Holiday addHoliday(@RequestBody Holiday holiday) {
         return holidayService.addHoliday(holiday);
     }
-
-    private final HolidayRepository holidayRepository;
 
     @Autowired
     public HolidaysController(HolidayRepository holidayRepository) {
         this.holidayRepository = holidayRepository;
     }
 
-    // GET all holidays
     @GetMapping
     public List<Holiday> getAllHolidays() {
         return holidayRepository.findAll();
+    }
+    // GET all holidays
+    @GetMapping("/{country}")
+    public List<Holiday> getAllHolidays(@PathVariable String country) {
+        return holidayService.getHolidaysByCountry(country);
     }
 
     // POST create a new holiday

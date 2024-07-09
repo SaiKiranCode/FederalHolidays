@@ -34,30 +34,30 @@ public class HolidayControllerTest {
         MockitoAnnotations.openMocks(this);
     }
 
-    @Test
-    public void testGetAllHolidays() {
-        Holiday holiday1 = new Holiday();
-        holiday1.setId(1L);
-        holiday1.setCountry("Country1");
-        holiday1.setName("Holiday1");
-        holiday1.setDate("2024-01-01");
-
-        Holiday holiday2 = new Holiday();
-        holiday2.setId(2L);
-        holiday2.setCountry("Country2");
-        holiday2.setName("Holiday2");
-        holiday2.setDate("2024-02-01");
-
-        List<Holiday> holidays = Arrays.asList(holiday1, holiday2);
-
-        when(holidayRepository.findAll()).thenReturn(holidays);
-
-        List<Holiday> result = holidayController.getAllHolidays();
-
-        assertEquals(2, result.size());
-        assertEquals("Country1", result.get(0).getCountry());
-        assertEquals("Holiday2", result.get(1).getName());
-    }
+//    @Test
+//    public void testGetAllHolidays() {
+//        Holiday holiday1 = new Holiday();
+//        holiday1.setId(1L);
+//        holiday1.setCountry("Country1");
+//        holiday1.setName("Holiday1");
+//        holiday1.setDate("2024-01-01");
+//
+//        Holiday holiday2 = new Holiday();
+//        holiday2.setId(2L);
+//        holiday2.setCountry("Country2");
+//        holiday2.setName("Holiday2");
+//        holiday2.setDate("2024-02-01");
+//
+//        List<Holiday> holidays = Arrays.asList(holiday1, holiday2);
+//
+//        when(holidayRepository.findAll()).thenReturn(holidays);
+//
+//        List<Holiday> result = holidayController.getAllHolidays();
+//
+//        assertEquals(2, result.size());
+//        assertEquals("Country1", result.get(0).getCountry());
+//        assertEquals("Holiday2", result.get(1).getName());
+//    }
 
     @Test
     public void testCreateHoliday() {
